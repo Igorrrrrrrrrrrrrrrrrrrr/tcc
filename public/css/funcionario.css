@@ -1,0 +1,26 @@
+body {
+    background-color: #060917;
+    color: #ffff
+}
+
+.bem{
+    font-size: 350%;
+    color: #fff;
+}
+
+.icone {
+    width: 50px;
+}
+
+.texto{
+    color: #fff;
+    font-size:200%;
+   
+}
+
+textarea{
+    background-color: #fff;
+    width: 450px;  
+    height: 50px;
+    border-radius: 10px;
+}

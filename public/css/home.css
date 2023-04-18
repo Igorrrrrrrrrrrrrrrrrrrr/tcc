@@ -1,0 +1,56 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #060917;
+    color: #FFF;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    color: #FFFFFF;
+}
+
+.logo {
+    width: 375px;
+}
+
+.icone {
+    width: 50px;
+}
+
+.botao {
+    border-radius: 20px;
+    background-color: #FFF;
+    color: #000;
+    width: max-content;
+    padding: 20px 60px;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 150%;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    z-index: 1;
+}
+
+.botao:hover {
+    transform: scale(1.1);
+}
+
+.botao:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.1);
+    transition: left 0.3s ease;
+    z-index: -1;
+}
+
+.botao:hover:before {
+    left: 0;
+}
