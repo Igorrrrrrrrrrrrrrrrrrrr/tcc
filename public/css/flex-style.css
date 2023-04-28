@@ -82,7 +82,7 @@ input, select, textarea {
 }
 
 input, textarea, select, *::placeholder {
-    color: var(--main-txt-color);
+    color: white;
 }
 
 *::placeholder {
@@ -105,7 +105,7 @@ input:focus, select:focus, textarea:focus {
 }
 
 input, select, button, .button {
-    height: 35px;
+    min-height: 35px;
 }
 
 .border,

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\FuncionarioController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,10 +18,8 @@ Route::get('/', function () {
     return view('home');
 });
 
-Route::get('/funcionario/login', function () {
-    return view('funcionario');
-});
+Route::get('/funcionario/login', [FuncionarioController::class, 'loginView']);
 
-Route::get('/funcionario/ponto', function () {
-    return view('registro_ponto');
-});
+Route::get('/funcionario/ponto', [FuncionarioController::class, 'registroPontoView']);
+
+Route::post('/funcionario/login', [FuncionarioController::class, 'login']);
