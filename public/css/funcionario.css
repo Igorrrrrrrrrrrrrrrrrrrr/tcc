@@ -24,3 +24,10 @@ textarea{
     height: 50px;
     border-radius: 10px;
 }
+
+.error{
+    color: red;
+    font-size: 670%;
+}
+
+

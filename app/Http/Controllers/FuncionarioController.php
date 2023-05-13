@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Funcionario;
+use App\Models\Ponto;
 use Illuminate\Http\Request;
 
 class FuncionarioController extends Controller
@@ -25,12 +26,31 @@ class FuncionarioController extends Controller
 
         $funcionario = Funcionario::where('cpf', $cpf)->where('senha', $senha)->first();
 
-        if (Funcionario::where('cpf', $cpf)->exists()) {
-            return redirect('/funcionario/login'); // O dado existe
+        if ($funcionario) {
+            session()->put('funcionario', $funcionario);
+            return redirect('/funcionario/ponto'); // O dado existe
          } else {
-            return false; // O dado não existe
+            return redirect()->back()->withErrors(['login' => 'Está errado seu burro.']); // O dado não existe
          }
 
-        dd($cpf, $senha);
     }
+
+    public function registro(int $tipo)
+    {
+        $ponto = new Ponto();
+        $ponto->tipo = $tipo;
+        $ponto->data_hora = date("Y-m-d H:i:s");
+        $ponto->id_funcionario = session()->get('funcionario')->id;
+        $ponto->save();
+        return redirect('/funcionario/ponto');
+    }
+
+    public function observacao()
+    {
+        return view("observacao");
+    }
+
+
 }
+
+

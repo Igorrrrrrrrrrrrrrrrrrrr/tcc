@@ -6,7 +6,7 @@
         <h1 class="bem vindo">SEJA BEM VINDO(a)!</h1>
 
         <div class="flex-col gap-10">
-            <label class="texto">Login</label>
+            <label class="texto">CPF</label>
             <input type="text" name="cpf"  id="loginInput" required >
         </div>
 
@@ -17,8 +17,10 @@
 
         <button type="submit" class="button">Entrar</button>
         @csrf
-
-
+        
+        @if($errors->has('login'))
+            <div class="error">{{ $errors->first('login') }}</div>
+        @endif
 
     </form>
 

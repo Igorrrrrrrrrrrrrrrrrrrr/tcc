@@ -23,3 +23,7 @@ Route::get('/funcionario/login', [FuncionarioController::class, 'loginView']);
 Route::get('/funcionario/ponto', [FuncionarioController::class, 'registroPontoView']);
 
 Route::post('/funcionario/login', [FuncionarioController::class, 'login']);
+
+Route::get('/funcionario/registro/{tipo}', [FuncionarioController::class, 'registro']);
+
+Route::get('/funcionario/observacao', [FuncionarioController::class, 'observacao']);

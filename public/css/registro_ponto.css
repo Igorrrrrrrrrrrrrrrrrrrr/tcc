@@ -1,87 +1,46 @@
-/* Estilos gerais */
-body {
-    background-color: #f5f5f5;
-    font-family: Arial, sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+body{
+	font-family: Arial, sans-serif;
 }
 
-.container {
-    background-color: #FFF;
-    padding: 40px;
-    border-radius: 8px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-    max-width: 400px;
-    width: 100%;
-    text-align: center;
+.card {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	background-color: #fff;
+	border-radius: 5px;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+	margin: 10px;
+	padding: 20px;
+	max-width: 300px;
+	text-align: center;
 }
 
-h1 {
-    font-size: 24px;
-    margin-bottom: 40px;
-    color: #333;
+.card img {
+	width: 100%;
+	height: auto;
+	border-radius: 5px;
+	margin-bottom: 20px;
 }
 
-.botao {
-    border: none;
-    border-radius: 25px;
-    color: #FFF;
-    padding: 14px 32px;
-    font-size: 18px;
-    font-weight: bold;
-    text-transform: uppercase;
-    cursor: pointer;
-    margin-top: 20px;
-    transform-origin: center;
-    transition: transform 0.3s ease;
-    display: block;
-    width: 100%;
+.card h3 {
+	font-size: 1.2rem;
+	font-weight: 600;
+	margin-bottom: 10px;
 }
 
-.botao:hover {
-    transform: scale(1.05);
+.card a {
+	display: block;
+	width: 100%;
+	padding: 10px 0;
+	border-radius: 5px;
+	background-color: #4CAF50;
+	color: #fff;
+	font-weight: 600;
+	text-decoration: none;
+	text-align: center;
+	cursor: pointer;
 }
 
-.footer {
-    margin-top: 20px;
-    color: #999;
-    font-size: 14px;
+.card a:hover {
+	background-color: #3E8E41;
 }
-
-/* Estilos para o histórico de registro de pontos */
-.historico {
-    margin-top: 20px;
-    text-align: left;
-}
-
-.historico ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-.historico li {
-    margin-bottom: 10px;
-}
-
-.historico .registro {
-    display: inline-block;
-    margin-right: 10px;
-}
-
-.historico .data {
-    color: #777;
-}
-
-/* Botão de entrada */
-.entrada {
-    background-color: #28a745; /* cor verde */
-  }
-  
-  /* Botão de saída */
-  .saida {
-    background-color: #dc3545; /* cor vermelha */
-  }
-  
-  

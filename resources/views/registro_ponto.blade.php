@@ -1,16 +1,41 @@
-<x-layout>
-    <link rel="stylesheet" href="/css/registro_ponto.css">
-    <title>Registro de Ponto</title>
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Exemplo de Cards Interativos</title>
+	<link rel="stylesheet" href="/css/registro.css">
+	
+</head>
+<body>
 
-    <div class="container">
-        <h1>REGISTRO DE PONTO</h1>
-        <button class="botao entrada">Entrada</button>
-        <button class="botao saida">Saída</button>
-        <div class="historico">
-            <h3>Histórico de Registros</h3>
-            <ul id="historico-lista"></ul>
-        </div>
-        <div class="footer">Seu nome de usuário: <strong>Nome do Usuário</strong></div>
-    </div>
-    <script src="/js/registro_ponto.js"></script>
-</x-layout>
+	<div class="username">{{ session()->get('funcionario')->nome; }}</div>
+
+
+	<div class="card-container">
+	<a href="/funcionario/registro/1" class="card">
+		<img src="/img/entra_fi.png" alt="Placeholder Image">
+		
+		<h3>Entrada</h3>
+	</a>
+	  
+	  <a href="/funcionario/registro/2" class="card">
+		<img src="/img/cuinmida.png" alt="Placeholder Image">
+		<h3>Almoço</h3>
+	  </a>
+	  
+	  <a href="/funcionario/registro/3" class="card">
+		<img src="/img/cuinmida.png" alt="Placeholder Image">
+		<h3>Volta do Almoço</h3>
+	  </a>
+	  
+	  <a href="/funcionario/registro/4" class="card">
+		<img src="/img/entra_fi.png" alt="Placeholder Image">
+		<h3>Fim do Expediente</h3>
+	  </a>
+	</div>	  
+
+
+	
+	<a class="botao justificativa" href="/funcionario/observacao">Observações</a>
+   
+</body>
+</html>
