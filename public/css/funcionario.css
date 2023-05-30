@@ -1,6 +1,6 @@
 body {
-    background-color: #060917;
-    color: #ffff
+    background-color: #202020;
+    color: #ffff;
 }
 
 .bem{
@@ -30,4 +30,7 @@ textarea{
     font-size: 670%;
 }
 
+nav{
+    display: none;
+}
 

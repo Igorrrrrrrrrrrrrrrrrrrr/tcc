@@ -1,35 +1,37 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #060917;
+    background-color: #202020;
 }
+
 h1 {
     text-align: center;
     color: #0077be;
     margin-top:60px;
 }
+
 form {
     max-width: 600px;
     margin-left: 280px;
-    background-color: #060917;
+    background-color: #202020;
     padding: 50px;
     border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    margin-top: 100px;
-    
-    
+    margin-top: 50px;
 }
+
 label {
     display: block;
-    margin-bottom: 10px;
+    margin-bottom: 1px;
     font-weight: bold;
     color: #FFFFFF;
+    font-size: 200%;
 }
+
 input[type="text"],
 textarea {
     width: 200%;
     padding: 100px;
     border: 1px solid #ccc;
-    border-radius: 3px;
+    border-radius: 1px;
     margin-bottom: 100px;
     font-size: 26px;
     resize: vertical;
@@ -48,5 +50,9 @@ button[type="submit"] {
       margin: 0 auto;
       margin-left: 420px;
 
-    
+
 }
+
+.justificativa:hover{
+    background: #ccc;
+  }

@@ -15,7 +15,23 @@ class FuncionarioController extends Controller
 
     public function registroPontoView()
     {
-        return view("registro_ponto");
+        $hoje = date('Y-m-d');
+        $horas = date('H:i', strtotime($hoje));
+       
+        $id_funcionario = session()->get('funcionario')->id;
+
+        $entrada_hoje = Ponto::where('tipo',1)->where('id_funcionario',$id_funcionario)->where('data_hora','like',"$hoje%")->first();
+        $almoco_hoje = Ponto::where('tipo',2)->where('id_funcionario',$id_funcionario)->where('data_hora', 'like',"$hoje%")->first();
+        $volta_hoje = Ponto::where('tipo',3)->where('id_funcionario',$id_funcionario)->where('data_hora','like',"$hoje%")->first();
+        $saida_hoje = Ponto::where('tipo',4)->where('id_funcionario',$id_funcionario)->where('data_hora','like',"$hoje%")->first();
+
+        return view("registro_ponto", [
+            'entrada_hoje' => $entrada_hoje,
+            'almoco_hoje' => $almoco_hoje,
+            'volta_hoje' => $volta_hoje,
+            'saida_hoje' => $saida_hoje,
+        ]);
+
     }
 
 

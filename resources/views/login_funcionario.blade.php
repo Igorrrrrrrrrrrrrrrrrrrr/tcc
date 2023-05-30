@@ -1,5 +1,7 @@
 <x-layout>
     <link rel="stylesheet" href="/css/funcionario.css">
+
+
     <title>Login</title>
 
     <form  action="/funcionario/login" method="post" class="flex-col children-center grow gap-20 text-center">

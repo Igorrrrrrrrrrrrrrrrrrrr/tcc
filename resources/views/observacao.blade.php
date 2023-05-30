@@ -13,8 +13,7 @@
         <h1>Observações</h1>
 	<form>
 		
-		<label for="justificativa">Observações:</label>
-		<textarea id="justificativa" name="justificativa" placeholder="Alguma observação?" required></textarea>
+		<textarea id="justificativa" name="justificativa" placeholder="Alguma observação?"></textarea>
 		
 		<button class= "enviar" type="submit">Enviar</button>
 	</form>
