@@ -27,3 +27,5 @@ Route::post('/funcionario/login', [FuncionarioController::class, 'login']);
 Route::get('/funcionario/registro/{tipo}', [FuncionarioController::class, 'registro']);
 
 Route::get('/funcionario/observacao', [FuncionarioController::class, 'observacao']);
+
+Route::get('/funcionario/historico', [FuncionarioController::class, 'historico']);

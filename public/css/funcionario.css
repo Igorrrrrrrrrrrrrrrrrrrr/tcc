@@ -1,6 +1,8 @@
 body {
     background-color: #202020;
     color: #ffff;
+    margin-top: 100px;
+    overflow: hidden;
 }
 
 .bem{
@@ -27,7 +29,7 @@ textarea{
 
 .error{
     color: red;
-    font-size: 670%;
+    font-size: 200%;
 }
 
 nav{

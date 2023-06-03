@@ -59,10 +59,10 @@ body{
 
   .username {
     position: fixed;
-    top: 20px;
+    top: 30px;
     left: 1400px;
-    font-size: 30px;
-    color: #ccc;
+    font-size: 35px;
+    color: #0077be;
   }
   
   .botao {
@@ -109,29 +109,11 @@ a{
   text-decoration: none;
 }
 
-.logo{
-  width: 42px;
-  height: 42px;
-  border-radius: 100px;
-  background-color: blueviolet;
-  margin: 10px;
-}
-
-header{
-  height: 10vh;
-  display: flex;
-  justify-content: space-between;
-  background-color: #202020;
-  box-shadow: 0 0 1rem black;
-}
-
-.ul{
-  display: flex;
-  margin: 23px;
-}
-
-.li{
-  color: blueviolet;
-  list-style-type: none;
-  padding-left: 2rem;
+.user{
+  position: fixed;
+  top: 34px;
+  left: 1340px;
+  font-size: 35px;
+  font-size: 30px;
+  margin-left: 10px;
 }

@@ -20,27 +20,15 @@
 	
 		<ul>
 		  <li class="item-menu">
-			<a href="#">
+			<a href="/funcionario/ponto">
 				<span class="icon"><i class="bi bi-house-door"></i></span>
 				<span class="txt-link">Home</span>
 			</a>
 		  </li>
 		  <li class="item-menu">
-			<a href="#">
+			<a href="/funcionario/historico">
 				<span class="icon"><i class="bi bi-calendar3"></i></span>
-				<span class="txt-link">Agenda</span>
-			</a>
-		  </li>
-		  <li class="item-menu">
-			<a href="#">
-				<span class="icon"><i class="bi bi-columns-gap"></i></span>
-				<span class="txt-link">Dashboard</span>
-			</a>
-		  </li>
-		  <li class="item-menu">
-			<a href="#">
-				<span class="icon"><i class="bi bi-person-circle"></i></i></span>
-				<span class="txt-link">Conta</span>
+				<span class="txt-link">Histórico</span>
 			</a>
 		  </li>
 		</ul>
