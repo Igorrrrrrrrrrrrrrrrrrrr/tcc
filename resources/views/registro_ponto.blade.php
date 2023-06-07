@@ -34,11 +34,25 @@
 		<div>{{ $saida_hoje?->data_hora }}</div>
 	  </a>
 
-	  <h3>{{$turnomanha}}</h3>
 	</div>	  
 
 
 	
 	<a class="botao justificativa" href="/funcionario/observacao">Observações</a>
+
+	<table>
+        <tr>
+            <td><strong>Turno da Manhã:</strong></td>
+            <td>{{$turnomanha}}</td>
+        </tr>
+        <tr>
+            <td><strong>Turno da Tarde:</strong></td>
+            <td>{{$turnotarde}}</td>
+        </tr>
+        <tr>
+            <td><strong>Horas Totais:</strong></td>
+            <td>{{$dia}}</td>
+        </tr>
+    </table>
 
 </x-layout>

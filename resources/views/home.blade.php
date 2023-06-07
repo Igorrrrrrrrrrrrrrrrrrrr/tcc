@@ -3,7 +3,7 @@
     <title>Document</title>
 
     <div class="flex-col children-center gap-40 grow">
-        <img class="logo" src="/img/logo (2).png" alt="">
+        <img class="logo" src="/img/logo.png" alt="">
         <a class="botao login" href="/funcionario/login">Funcionário</a>
         <a class="botao cadastro" onclick="abrirRegistroFuncionarios()">Gestor</a>
 

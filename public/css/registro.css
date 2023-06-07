@@ -67,8 +67,9 @@ body{
   
   .botao {
     border-radius: 50px;
-    background-color: #FFF;
-    color: #000;
+    background-color: #202020;
+    color: #fff;
+    border: 1px solid white;
     width: max-content;
     margin-left: 690px;
     position: absolute;
@@ -116,4 +117,17 @@ a{
   font-size: 35px;
   font-size: 30px;
   margin-left: 10px;
+}
+
+table {
+  border: 1px solid white;
+  background-color: transparent;
+  position: absolute;
+  bottom: 30px;
+  right: 140px;
+}
+
+th, td {
+  padding: 10px;
+  color: #fff;
 }

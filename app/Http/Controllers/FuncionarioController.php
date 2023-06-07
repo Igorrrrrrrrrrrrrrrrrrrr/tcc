@@ -17,39 +17,47 @@ class FuncionarioController extends Controller
     public function registroPontoView()
     {
         $hoje = date('Y-m-d');
-        $horas = date('H:i', strtotime($hoje));
-       
+
+
+
+
         $id_funcionario = session()->get('funcionario')->id;
 
-        $entrada_hoje = Ponto::where('tipo',1)->where('id_funcionario',$id_funcionario)->where('data_hora','like',"$hoje%")->first();
-        $almoco_hoje = Ponto::where('tipo',2)->where('id_funcionario',$id_funcionario)->where('data_hora', 'like',"$hoje%")->first();
-        $volta_hoje = Ponto::where('tipo',3)->where('id_funcionario',$id_funcionario)->where('data_hora','like',"$hoje%")->first();
-        $saida_hoje = Ponto::where('tipo',4)->where('id_funcionario',$id_funcionario)->where('data_hora','like',"$hoje%")->first();
-        
-        $horarioentrada= DateTime::createFromFormat('H:i:s', $entrada_hoje);
-        $horarioalmoco= DateTime::createFromFormat('H:i:s', $almoco_hoje);
+        $entrada_hoje = Ponto::where('tipo', 1)->where('id_funcionario', $id_funcionario)->where('data_hora', 'like', "$hoje%")->first();
+        $almoco_hoje = Ponto::where('tipo', 2)->where('id_funcionario', $id_funcionario)->where('data_hora', 'like', "$hoje%")->first();
+        $volta_hoje = Ponto::where('tipo', 3)->where('id_funcionario', $id_funcionario)->where('data_hora', 'like', "$hoje%")->first();
+        $saida_hoje = Ponto::where('tipo', 4)->where('id_funcionario', $id_funcionario)->where('data_hora', 'like', "$hoje%")->first();
 
-        
-        if (isset($horarioentrada)) {
+        $horarioentrada = DateTime::createFromFormat('Y-m-d H:i:s', $entrada_hoje->data_hora);
+        $horarioalmoco = DateTime::createFromFormat('Y-m-d H:i:s', $almoco_hoje->data_hora);
+
+        if (!empty($horarioentrada) && !empty($horarioalmoco)) {
             $turnomanha = $horarioentrada->diff($horarioalmoco);
             $turnomanha = $turnomanha->format('%H:%I:%S');
-    
-            } else{
-            $turnomanha = "Ponto não batido";
-        }
-
-        if ($horarioentrada !== false) {
-            $diferenca = $horarioalmoco - $horarioentrada;
-            $horas = floor($diferenca / 3600);
-            $minutos = floor(($diferenca % 3600) / 60);
-            $segundos = $diferenca % 60;
-            $turnomanha = sprintf("%02d:%02d:%02d", $horas, $minutos, $segundos);
         } else {
-            $turnomanha = "Ponto não batido";
+            $turnomanha = "";
+        }
+
+        $horariovolta = DateTime::createFromFormat('Y-m-d H:i:s', $volta_hoje->data_hora);
+        $horariosaida = DateTime::createFromFormat('Y-m-d H:i:s', $saida_hoje->data_hora);
+
+        if (!empty($horariovolta) && !empty($horariosaida)) {
+            $turnotarde = $horariovolta->diff($horariosaida);
+            $turnotarde = $turnotarde->format('%H:%I:%S');
+        } else {
+            $turnotarde = "";
         }
 
 
-        
+        $segundos_manha = strtotime($turnomanha) - strtotime('00:00:00');
+        $segundos_tarde = strtotime($turnotarde) - strtotime('00:00:00');
+
+        $total_segundos = $segundos_manha + $segundos_tarde;
+
+        $dia = gmdate('H:i:s', $total_segundos);
+
+        $hora = date('H:i', strtotime($entrada_hoje->data_hora));
+
 
         return view("registro_ponto", [
             'entrada_hoje' => $entrada_hoje,
@@ -57,8 +65,9 @@ class FuncionarioController extends Controller
             'volta_hoje' => $volta_hoje,
             'saida_hoje' => $saida_hoje,
             'turnomanha' => $turnomanha,
+            'turnotarde' => $turnotarde,
+            'dia' => $dia,
         ]);
-
     }
 
 
@@ -72,10 +81,9 @@ class FuncionarioController extends Controller
         if ($funcionario) {
             session()->put('funcionario', $funcionario);
             return redirect('/funcionario/ponto'); // O dado existe
-         } else {
+        } else {
             return redirect()->back()->withErrors(['login' => 'Está errado seu burro.']); // O dado não existe
-         }
-
+        }
     }
 
     public function registro(int $tipo)
@@ -97,8 +105,4 @@ class FuncionarioController extends Controller
     {
         return view("historico");
     }
-
-
 }
-
-
