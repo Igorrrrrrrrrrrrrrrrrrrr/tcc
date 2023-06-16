@@ -13,25 +13,25 @@
 		<img src="/img/entrada.png" alt="Placeholder Image">
 		
 		<h3>Entrada</h3>
-		<div>{{ $entrada_hoje?->data_hora }}</div>
+		<div>{{substr($entrada_hoje?->data_hora, 11)}}</div>
 	</a>
 	  
 	  <a href="/funcionario/registro/2" class="card">
 		<img src="/img/entradaalmoco.png" alt="Placeholder Image">
 		<h3>Almoço</h3>
-		<div class="link">{{ $almoco_hoje?->data_hora }}</div>
+		<div class="link">{{substr($almoco_hoje?->data_hora, 11) }}</div>
 	  </a>
 	  
 	  <a href="/funcionario/registro/3" class="card">
 		<img src="/img/saidaalmoco.png" alt="Placeholder Image">
 		<h3>Volta do Almoço</h3>
-		<div>{{ $volta_hoje?->data_hora }}</div>
+		<div>{{ substr($volta_hoje?->data_hora, 11) }}</div>
 	  </a>
 	  
 	  <a href="/funcionario/registro/4" class="card">
 		<img src="/img/saida.png" alt="Placeholder Image">
 		<h3>Fim do Expediente</h3>
-		<div>{{ $saida_hoje?->data_hora }}</div>
+		<div>{{ substr($saida_hoje?->data_hora, 11) }}</div>
 	  </a>
 
 	</div>	  

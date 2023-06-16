@@ -24,13 +24,7 @@
 				<span class="icon"><i class="bi bi-house-door"></i></span>
 				<span class="txt-link">Home</span>
 			</a>
-		  </li>
-		  <li class="item-menu">
-			<a href="/funcionario/historico">
-				<span class="icon"><i class="bi bi-calendar3"></i></span>
-				<span class="txt-link">Histórico</span>
-			</a>
-		  </li>
+		</li>
 		</ul>
 	
 	

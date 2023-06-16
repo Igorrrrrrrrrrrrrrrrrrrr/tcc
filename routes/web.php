@@ -28,4 +28,4 @@ Route::get('/funcionario/registro/{tipo}', [FuncionarioController::class, 'regis
 
 Route::get('/funcionario/observacao', [FuncionarioController::class, 'observacao']);
 
-Route::get('/funcionario/historico', [FuncionarioController::class, 'historico']);
+Route::get('/funcionario/gestor', [FuncionarioController::class, 'gestor']);

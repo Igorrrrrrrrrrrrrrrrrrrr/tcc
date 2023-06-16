@@ -11,7 +11,7 @@ a {
 
 .logo {
     width: 375px;
-    margin-right: -50px;
+    margin-top: 50px;
 }
 
 .icone {
@@ -37,6 +37,7 @@ a {
 
 .botao:hover {
     transform: scale(1.1);
+    background: #0077be;
 }
 
 .botao:before {

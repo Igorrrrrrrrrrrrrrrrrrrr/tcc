@@ -18,9 +18,6 @@ class FuncionarioController extends Controller
     {
         $hoje = date('Y-m-d');
 
-
-
-
         $id_funcionario = session()->get('funcionario')->id;
 
         $entrada_hoje = Ponto::where('tipo', 1)->where('id_funcionario', $id_funcionario)->where('data_hora', 'like', "$hoje%")->first();
@@ -28,8 +25,8 @@ class FuncionarioController extends Controller
         $volta_hoje = Ponto::where('tipo', 3)->where('id_funcionario', $id_funcionario)->where('data_hora', 'like', "$hoje%")->first();
         $saida_hoje = Ponto::where('tipo', 4)->where('id_funcionario', $id_funcionario)->where('data_hora', 'like', "$hoje%")->first();
 
-        $horarioentrada = DateTime::createFromFormat('Y-m-d H:i:s', $entrada_hoje->data_hora);
-        $horarioalmoco = DateTime::createFromFormat('Y-m-d H:i:s', $almoco_hoje->data_hora);
+        $horarioentrada = DateTime::createFromFormat('Y-m-d H:i:s', $entrada_hoje?->data_hora);
+        $horarioalmoco = DateTime::createFromFormat('Y-m-d H:i:s', $almoco_hoje?->data_hora);
 
         if (!empty($horarioentrada) && !empty($horarioalmoco)) {
             $turnomanha = $horarioentrada->diff($horarioalmoco);
@@ -38,8 +35,8 @@ class FuncionarioController extends Controller
             $turnomanha = "";
         }
 
-        $horariovolta = DateTime::createFromFormat('Y-m-d H:i:s', $volta_hoje->data_hora);
-        $horariosaida = DateTime::createFromFormat('Y-m-d H:i:s', $saida_hoje->data_hora);
+        $horariovolta = DateTime::createFromFormat('Y-m-d H:i:s', $volta_hoje?->data_hora);
+        $horariosaida = DateTime::createFromFormat('Y-m-d H:i:s', $saida_hoje?->data_hora);
 
         if (!empty($horariovolta) && !empty($horariosaida)) {
             $turnotarde = $horariovolta->diff($horariosaida);
@@ -56,7 +53,6 @@ class FuncionarioController extends Controller
 
         $dia = gmdate('H:i:s', $total_segundos);
 
-        $hora = date('H:i', strtotime($entrada_hoje->data_hora));
 
 
         return view("registro_ponto", [
@@ -101,8 +97,8 @@ class FuncionarioController extends Controller
         return view("observacao");
     }
 
-    public function historico()
+    public function gestor()
     {
-        return view("historico");
+        return view("gestor");
     }
 }
